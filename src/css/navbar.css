@@ -36,6 +36,7 @@ ul {
 .item:hover{
     border-color:gray;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .icon {
