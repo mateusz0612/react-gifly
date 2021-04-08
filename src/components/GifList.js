@@ -72,15 +72,15 @@ const GifList = () => {
       <h1>Trending gifs:</h1>
       <section className="items">
         {state.items.map((item) => {
-          const { id, title } = item;
+          const { id, title, username } = item;
           const url = item.images.original.url;
           const props = {
-            id,
             title,
             url,
+            username: username ? username : undefined,
           };
           console.log(item);
-          return <GifItem {...props} />;
+          return <GifItem {...props} key={id} />;
         })}
       </section>
     </main>
