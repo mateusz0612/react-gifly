@@ -2,6 +2,7 @@ import React, { useReducer, useEffect } from "react";
 import { BiSad } from "react-icons/bi";
 import axios from "axios";
 import "../css/GifList.css";
+import GifItem from "./GifItem";
 
 const GifList = () => {
   const initialState = {
@@ -71,14 +72,15 @@ const GifList = () => {
       <h1>Trending gifs:</h1>
       <section className="items">
         {state.items.map((item) => {
+          const { id, title } = item;
           const url = item.images.original.url;
-          const { id } = item;
+          const props = {
+            id,
+            title,
+            url,
+          };
           console.log(item);
-          return (
-            <article key={id}>
-              <img src={url} alt="" className="gif_item" />
-            </article>
-          );
+          return <GifItem {...props} />;
         })}
       </section>
     </main>

@@ -31,10 +31,23 @@ html {
     flex-wrap: wrap;
 }
 
-.gif_item {
+
+.gif_info {
+    max-width: 258px;
+    border: 1px solid gray;
+    margin: 10px;
+}
+
+.gif_img {
     width: 256px;
     height: 164px;
-    margin: 10px;
+}
+
+.gif_title {
+    font-size: 1.5rem;
+    color: #5384fb;
+    text-align: center;
+    padding: 0.5rem 1rem;
 }
 
 h1 {
@@ -61,6 +74,16 @@ h1 {
     .error{
         font-size: 4rem;
     }        
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    .gif_img {
+        width: 312px;
+        height: 218px;
+        margin: 10px;
+    }
 }
 
 @media screen and (min-width: 1024px){
