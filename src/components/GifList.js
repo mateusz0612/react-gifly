@@ -28,6 +28,9 @@ const GifList = () => {
   const getData = async () => {
     const response = await axios({
       method: "get",
+      headers: {
+        "Content-Type": "application/json",
+      },
       url: `https://api.giphy.com/v1/gifs/trending?api_key=tmf7Jc3lOhYC42tUvzsPix4bqRDx1FOz`,
     }).catch((err) => {
       if (err.response) {
@@ -65,6 +68,19 @@ const GifList = () => {
           ""
         )}
       </article>
+      <h1>Trending gifs:</h1>
+      <section className="items">
+        {state.items.map((item) => {
+          const url = item.images.original.url;
+          const { id } = item;
+          console.log(item);
+          return (
+            <article key={id}>
+              <img src={url} alt="" className="gif_item" />
+            </article>
+          );
+        })}
+      </section>
     </main>
   );
 };

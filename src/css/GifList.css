@@ -25,6 +25,24 @@ html {
     transform: translate(-50%, -50%);
 }
 
+.items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gif_item {
+    width: 256px;
+    height: 164px;
+    margin: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 2% 0px;
+}
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% {transform: rotate(360deg); }
