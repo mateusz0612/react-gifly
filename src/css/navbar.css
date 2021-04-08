@@ -40,6 +40,7 @@ ul {
 
 .icon {
     font-size: 4rem;
+    color: #363732;
 }
 
 @media screen and (min-width: 768px){

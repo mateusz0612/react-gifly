@@ -7,9 +7,9 @@ const Navbar = () => {
   return (
     <nav>
       <ul>
-        <li>
+        <Link to="/">
           <AiOutlineGif className="icon" />
-        </li>
+        </Link>
         <Link to="/trending" className="item">
           Trending
         </Link>
