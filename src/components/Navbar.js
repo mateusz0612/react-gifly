@@ -1,16 +1,21 @@
 import React from "react";
 import "../css/navbar.css";
 import { AiOutlineGif } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav>
       <ul>
-        <li className="icon">
-          <AiOutlineGif />
+        <li>
+          <AiOutlineGif className="icon" />
         </li>
-        <li className="item">Trending</li>
-        <li className="item">Search</li>
+        <Link to="/trending" className="item">
+          Trending
+        </Link>
+        <Link to="/search" className="item">
+          Search
+        </Link>
       </ul>
     </nav>
   );

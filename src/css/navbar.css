@@ -23,13 +23,14 @@ ul {
     width: 85%;
     font-size: 2rem;
     list-style: none;
-    color: #363732;
 }
 
 .item {
-    padding: 10px 15px;
+    padding: 5px 10px;
     border: 2px solid transparent;
     border-radius: 5px;
+    text-decoration: none;
+    color: #363732;
 }
 
 .item:hover{
@@ -38,26 +39,38 @@ ul {
 }
 
 .icon {
-    font-size: 5rem;
-    margin-top: 3%;
+    font-size: 4rem;
 }
 
 @media screen and (min-width: 768px){
-    ul {
+    
+    .item {
         font-size: 4rem;
     }
 
     .icon {
-        font-size: 7rem;
+        font-size: 7.5rem;
     }
 }
 
 @media screen and (min-width: 1024px){
-    ul {
-        font-size: 5.5rem;
+    
+    .item {
+        font-size: 5rem;
     }
 
     .icon {
-        font-size: 9rem;
+        font-size: 11rem;
+    }
+}
+
+@media screen and (min-width: 1400px){
+    
+    .item {
+        font-size: 3rem;
+    }
+
+    .icon {
+        font-size: 6rem;
     }
 }
