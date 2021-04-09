@@ -35,6 +35,7 @@ const GifList = () => {
       url: `https://api.giphy.com/v1/gifs/trending?api_key=tmf7Jc3lOhYC42tUvzsPix4bqRDx1FOz`,
     }).catch((err) => {
       if (err.response) {
+        dispatch({ type: "SET_LOADING" });
         dispatch({ type: "SET_ERROR" });
       }
     });

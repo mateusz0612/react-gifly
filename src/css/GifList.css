@@ -33,10 +33,17 @@ html {
 
 
 .gif_info {
-    max-width: 258px;
-    border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 280px;
+    border: 3px solid #53D8FB;
+    border-radius: 5px;
     margin: 10px;
+    padding: 1rem;
     color: gray;
+    font-size: 1.5rem;
 }
 
 .gif_img {
@@ -45,10 +52,16 @@ html {
 }
 
 .gif_title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #5384fb;
     text-align: center;
-    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+}
+
+.gif_title:hover {
+    cursor: pointer;
+    color: gray;
+    transition: 0.5s;
 }
 
 h1 {
@@ -80,14 +93,39 @@ h1 {
         font-size: 4rem;
     }
 
+    .gif_info {
+        width: 350px;
+        height: 370px;
+        font-size: 2rem;
+    }
+
     .gif_img {
-        width: 312px;
-        height: 218px;
-        margin: 10px;
+        width: 320px;
+        height: 240px;
+    }
+
+    .gif_title {
+        font-size: 2.5rem;
     }
 }
 
 @media screen and (min-width: 1024px){
+
+    .gif_info {
+        width: 460px;
+        height: 480px;
+        font-size: 2.5rem;
+    }
+
+    .gif_img {
+        width: 420px;
+        height: 340px;
+    }
+
+    .gif_title {
+        font-size: 3rem;
+    }
+
     .error{
         font-size: 5rem;
     }
