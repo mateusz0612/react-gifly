@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const GifItem = (props) => {
-  const { url, title, username } = props;
+  const { id, url, title, username } = props;
   return (
     <article>
       <div className="gif_info">

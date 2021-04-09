@@ -76,6 +76,7 @@ const GifList = () => {
           const { id, title, username } = item;
           const url = item.images.original.url;
           const props = {
+            id,
             title,
             url,
             username: username ? username : undefined,
