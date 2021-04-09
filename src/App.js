@@ -15,10 +15,10 @@ function App() {
             <Home />
           </Route>
           <Route exact path="/trending">
-            <GifList />
+            <GifList choice="TRENDING" />
           </Route>
           <Route exact path="/search">
-            <SearchGif />
+            <GifList choice="SEARCH" />
           </Route>
           <Route exact path="/*">
             <Error />

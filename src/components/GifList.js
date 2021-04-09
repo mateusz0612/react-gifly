@@ -4,7 +4,9 @@ import axios from "axios";
 import "../css/GifList.css";
 import GifItem from "./GifItem";
 
-const GifList = () => {
+const GifList = (props) => {
+  const { choice } = props;
+
   const initialState = {
     items: [],
     isLoading: true,
@@ -60,6 +62,7 @@ const GifList = () => {
 
   return (
     <main>
+      <p>{choice === "TRENDING" ? "trending" : "search list"}</p>
       <article className="error">
         {state.isError ? (
           <React.Fragment>
