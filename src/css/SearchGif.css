@@ -3,4 +3,54 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 5% 0px;
+}
+
+.form-wrapper form label {
+    font-size: 1.8rem;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.form-wrapper form input {
+    outline: none;
+    line-height: 20px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.5rem;
+}
+
+.info {
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 3%;
+}
+
+@media screen and (min-width: 768px) {
+    .form-wrapper form label {
+        font-size: 3rem;
+    }
+    
+    .form-wrapper form input {
+        font-size: 2.5rem;
+    }
+    
+    .info {
+        font-size: 2.2rem;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .form-wrapper form label {
+        font-size: 4.5rem;
+    }
+    
+    .form-wrapper form input {
+        font-size: 3.5rem;
+    }
+    
+    .info {
+        font-size: 3rem;
+    }
 }

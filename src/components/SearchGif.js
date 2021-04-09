@@ -1,13 +1,14 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer, useEffect } from "react";
 import GifList from "./GifList";
 import "../css/SearchGif.css";
+import axios from "axios";
+import { BiSad } from "react-icons/bi";
 
 const SearchGif = () => {
   const initialState = {
     items: [],
     isLoading: true,
     isError: false,
-    query: "",
   };
 
   const reducer = (state, action) => {
@@ -18,23 +19,78 @@ const SearchGif = () => {
         return { ...state, isLoading: false };
       case "SET_ERROR":
         return { ...state, isError: true };
-      case "SET_QUERY":
-        return { ...state, query: action.payload };
       default:
         throw new Error();
     }
   };
 
+  const getData = async () => {
+    const response = await axios({
+      method: "get",
+      url: `https://api.giphy.com/v1/gifs/search?api_key=tmf7Jc3lOhYC42tUvzsPix4bqRDx1FOz&q=${query}&limit=14`,
+    }).catch((e) => {
+      if (e.response) {
+        console.log(e);
+        dispatch({ type: "SET_LOADING" });
+        dispatch({ type: "SET_ERROR" });
+      }
+    });
+    if (response !== undefined) {
+      const data = response.data.data;
+      dispatch({ type: "SET_LOADING" });
+      dispatch({ type: "SET_ITEMS", payload: data });
+    }
+  };
+
+  const [query, setQuery] = useState("");
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    getData();
+  }, [query]);
+
+  if (state.isLoading) {
+    return (
+      <section className="wrapper">
+        <div className="loader"></div>
+      </section>
+    );
+  }
+
   return (
     <React.Fragment>
+      <article className="error">
+        {state.isError ? (
+          <React.Fragment>
+            <h1>Couldn't load data from server. Please try again! </h1>
+            <BiSad className="icon" />
+          </React.Fragment>
+        ) : (
+          ""
+        )}
+      </article>
       <section className="form-wrapper">
         <form>
-          <label htmlFor="query">Entery query:</label>
-          <input type="text" value={state.query} name="query" id="query" />
+          <label htmlFor="query">Enter query:</label>
+          <input
+            type="text"
+            value={query}
+            name="query"
+            id="query"
+            placeholder="e.g football"
+            onChange={(e) => {
+              setQuery(e.target.value);
+            }}
+          />
         </form>
       </section>
-      <section className="wrapper"></section>
+      <h1>Founded gifs:</h1>
+      <GifList data={state.items} />
+      <footer>
+        <p className="info">
+          Gif loading may take some time. Please be patient.
+        </p>
+      </footer>
     </React.Fragment>
   );
 };
