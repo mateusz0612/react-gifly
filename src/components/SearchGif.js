@@ -1,4 +1,4 @@
-import React, { useState, useReducer, useEffect } from "react";
+import React, { useState, useReducer, useEffect, useCallback } from "react";
 import GifList from "./GifList";
 import "../css/SearchGif.css";
 import axios from "axios";
@@ -24,7 +24,10 @@ const SearchGif = () => {
     }
   };
 
-  const getData = async () => {
+  const [query, setQuery] = useState("");
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const getData = useCallback(async () => {
     const response = await axios({
       method: "get",
       url: `https://api.giphy.com/v1/gifs/search?api_key=tmf7Jc3lOhYC42tUvzsPix4bqRDx1FOz&q=${query}&limit=14`,
@@ -40,14 +43,11 @@ const SearchGif = () => {
       dispatch({ type: "SET_LOADING" });
       dispatch({ type: "SET_ITEMS", payload: data });
     }
-  };
-
-  const [query, setQuery] = useState("");
-  const [state, dispatch] = useReducer(reducer, initialState);
+  }, [query]);
 
   useEffect(() => {
     getData();
-  }, [query]);
+  }, [getData]);
 
   if (state.isLoading) {
     return (

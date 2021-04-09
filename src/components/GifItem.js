@@ -16,12 +16,13 @@ const GifItem = (props) => {
 
 GifItem.propTypes = {
   url: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   username: PropTypes.string,
 };
 
 GifItem.defaultProps = {
-  username: "Not given",
+  title: "No title given",
+  username: "No username given",
 };
 
 export default GifItem;

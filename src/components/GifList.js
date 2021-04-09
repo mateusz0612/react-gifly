@@ -11,8 +11,8 @@ const GifList = (props) => {
         const url = item.images.original.url;
         const props = {
           id,
-          title,
           url,
+          title: title ? title : undefined,
           username: username ? username : undefined,
         };
         return <GifItem {...props} key={id} />;
