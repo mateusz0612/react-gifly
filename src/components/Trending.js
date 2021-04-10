@@ -73,6 +73,11 @@ const Trending = () => {
       </article>
       <h1>Trending gifs:</h1>
       <GifList data={state.items} />
+      <footer>
+        <p className="info">
+          Gif loading may take some time. Please be patient.
+        </p>
+      </footer>
     </main>
   );
 };

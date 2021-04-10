@@ -1,5 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useEffect, useReducer } from "react";
 import { apiKey } from "./ApiKey";
 import { useParams } from "react-router-dom";
 
