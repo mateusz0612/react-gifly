@@ -1,0 +1,96 @@
+.gif_view {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.gif_view img {
+    width: 320px;
+    height: 280px;
+}
+
+.gif_view_info {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 1%;
+}
+
+.gif_view a {
+    text-decoration: none;
+    color: #5384fb;
+}
+
+.gif_view a:hover{
+    cursor: pointer;
+    color: gray;
+    transition: 0.5s;
+}
+
+.user_info {
+    width: 100%;
+    margin-top: 5%;
+    padding: 2%;
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+
+.user_info img {
+    width: 128px;
+    height: 96px;
+}
+
+.user_info_container {
+    padding: 2%;
+}
+
+@media screen and (min-width: 768px) {
+    .gif_view img {
+        width: 620px;
+        height: 400px;
+    }
+
+    .gif_view_info {
+        font-size: 2.5rem;
+    }
+
+    .user_info img {
+        width: 328px;
+        height: 296px;
+    }   
+
+    .user_info {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gif_view img {
+        width: 820px;
+        height: 600px;
+    }
+
+    .gif_view_info {
+        font-size: 3.5rem;
+    }
+
+    .user_info img {
+        width: 396px;
+        height: 329px;
+    }   
+
+    .user_info {
+        font-size: 3rem;
+    }
+}
