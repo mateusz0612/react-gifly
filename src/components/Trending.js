@@ -3,6 +3,7 @@ import { BiSad } from "react-icons/bi";
 import axios from "axios";
 import "../css/Trending.css";
 import GifList from "./GifList";
+import { apiKey } from "./ApiKey";
 
 const Trending = () => {
   const initialState = {
@@ -32,7 +33,7 @@ const Trending = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      url: `https://api.giphy.com/v1/gifs/trending?api_key=tmf7Jc3lOhYC42tUvzsPix4bqRDx1FOz`,
+      url: `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}`,
     }).catch((err) => {
       if (err.response) {
         dispatch({ type: "SET_LOADING" });

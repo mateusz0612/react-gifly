@@ -3,6 +3,7 @@ import GifList from "./GifList";
 import "../css/SearchGif.css";
 import axios from "axios";
 import { BiSad } from "react-icons/bi";
+import { apiKey } from "./ApiKey";
 
 const SearchGif = () => {
   const initialState = {
@@ -30,7 +31,7 @@ const SearchGif = () => {
   const getData = useCallback(async () => {
     const response = await axios({
       method: "get",
-      url: `https://api.giphy.com/v1/gifs/search?api_key=tmf7Jc3lOhYC42tUvzsPix4bqRDx1FOz&q=${query}&limit=14`,
+      url: `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&limit=14`,
     }).catch((e) => {
       if (e.response) {
         console.log(e);
