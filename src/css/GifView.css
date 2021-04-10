@@ -15,11 +15,15 @@
 .gif_view_info {
     width: 80%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     font-size: 1.3rem;
     font-weight: bold;
     margin-top: 1%;
+}
+
+.gif_view_info p:first-of-type {
+    margin-right: 2%;
 }
 
 .gif_view a {
@@ -66,8 +70,8 @@
     }
 
     .user_info img {
-        width: 328px;
-        height: 296px;
+        width: 270px;
+        height: 236px;
     }   
 
     .user_info {

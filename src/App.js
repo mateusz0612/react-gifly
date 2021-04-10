@@ -5,6 +5,7 @@ import SearchGif from "./components/SearchGif";
 import Error from "./components/Error";
 import Home from "./components/Home";
 import GifView from "./components/GifView";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Error />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </main>
   );

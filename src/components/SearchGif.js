@@ -87,11 +87,6 @@ const SearchGif = () => {
       </section>
       <h1>Founded gifs:</h1>
       <GifList data={state.items} />
-      <footer>
-        <p className="info">
-          Gif loading may take some time. Please be patient.
-        </p>
-      </footer>
     </React.Fragment>
   );
 };

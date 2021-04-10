@@ -102,11 +102,6 @@ const GifView = () => {
           </article>
         )}
       </article>
-      <footer>
-        <p className="info">
-          Gif loading may take some time. Please be patient.
-        </p>
-      </footer>
     </main>
   );
 };
