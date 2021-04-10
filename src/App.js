@@ -9,27 +9,25 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <main>
-      <Router>
-        <Navbar />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/trending">
-            <Trending />
-          </Route>
-          <Route exact path="/search">
-            <SearchGif />
-          </Route>
-          <Route path="/gifs/:id" children={<GifView />}></Route>
-          <Route path="/*">
-            <Error />
-          </Route>
-        </Switch>
-        <Footer />
-      </Router>
-    </main>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/trending">
+          <Trending />
+        </Route>
+        <Route exact path="/search">
+          <SearchGif />
+        </Route>
+        <Route path="/gifs/:id" children={<GifView />}></Route>
+        <Route path="/*">
+          <Error />
+        </Route>
+      </Switch>
+      <Footer />
+    </Router>
   );
 }
 

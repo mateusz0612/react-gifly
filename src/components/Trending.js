@@ -30,9 +30,6 @@ const Trending = () => {
   const getData = async () => {
     const response = await axios({
       method: "get",
-      headers: {
-        "Content-Type": "application/json",
-      },
       url: `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}`,
     }).catch((err) => {
       if (err.response) {
