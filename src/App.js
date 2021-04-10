@@ -4,6 +4,7 @@ import Trending from "./components/Trending";
 import SearchGif from "./components/SearchGif";
 import Error from "./components/Error";
 import Home from "./components/Home";
+import GifView from "./components/GifView";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
           <Route exact path="/search">
             <SearchGif />
           </Route>
-          <Route exact path="/*">
+          <Route path="/gifs/:id" children={<GifView />}></Route>
+          <Route path="/*">
             <Error />
           </Route>
         </Switch>

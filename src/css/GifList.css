@@ -19,12 +19,16 @@
 
 .gif_title {
     font-size: 2rem;
-    color: #5384fb;
     text-align: center;
     margin-top: 0.5rem;
 }
 
-.gif_title:hover {
+.gif_title a {
+    text-decoration: none;
+    color: #5384fb;
+}
+
+.gif_title a:hover {
     cursor: pointer;
     color: gray;
     transition: 0.5s;

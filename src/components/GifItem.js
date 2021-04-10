@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const GifItem = (props) => {
   const { id, url, title, username } = props;
@@ -7,7 +8,9 @@ const GifItem = (props) => {
     <article>
       <div className="gif_info">
         <img src={url} alt="" className="gif_img" />
-        <h2 className="gif_title">{title}</h2>
+        <h2 className="gif_title">
+          <Link to={`/gifs/${id}`}>{title}</Link>
+        </h2>
         <p className="gif_author">Added by: {username}</p>
       </div>
     </article>
